@@ -10,7 +10,7 @@
     "detox": "^13.2.0",
     "mocha": "^5.2.0",
     "react": "16.8.3",
-    "react-native": "0.59.8"
+    "react-native": "0.59.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
