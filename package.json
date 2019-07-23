@@ -8,12 +8,12 @@
   },
   "dependencies": {
     "detox": "^13.2.0",
-    "mocha": "^5.2.0",
     "react": "16.8.3",
     "react-native": "0.59.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
+    "jest": "^24.7.1",
     "babel-preset-react-native": "^5",
     "react-test-renderer": "16.4.1"
   },
@@ -55,6 +55,8 @@
             "name": "192.168.56.101:5555"
       }
     },
-    "test-runner": "mocha"
+    "specs": "",
+    "test-runner": "jest",
+    "runner-config": "e2e/config.json"
   }
 }

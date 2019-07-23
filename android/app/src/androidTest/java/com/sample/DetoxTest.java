@@ -1,29 +1,24 @@
 package com.sample;
 
-import android.support.test.filters.LargeTest;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
-
 import com.sampleprojectreactnative.MainActivity;
 import com.wix.detox.Detox;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-/**
- * Created by simonracz on 28/05/2017.
- */
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class DetoxTest {
 
-    @Rule
-    public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(MainActivity.class, false, false);
+  @Rule
+  public ActivityTestRule<MainActivity> mActivityRule =
+      new ActivityTestRule<>(MainActivity.class, false, false);
 
-    @Test
-    public void runDetoxTests() {
-        Detox.runTests(mActivityRule);
-    }
+  @Test
+  public void runDetoxTests() {
+    Detox.runTests(mActivityRule);
+  }
 }

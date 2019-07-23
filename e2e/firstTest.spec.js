@@ -1,6 +1,6 @@
 describe('Example', () => {
-  beforeEach(async () => {
-    await device.reloadReactNative();
+  beforeAll(done => {
+    done();
   });
 
   it('should have welcome screen', async () => {
