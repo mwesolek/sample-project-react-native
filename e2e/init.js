@@ -1,32 +1,19 @@
 const detox = require('detox');
-const adapter = require('detox/runners/jest/adapter');
-
 const config = require('../package.json').detox;
+const adapter = require('detox/runners/mocha/adapter');
 
-jest.setTimeout(60000);
-jasmine.getEnv().addReporter(adapter);
-
-beforeAll(async () => {
-  await detox.init(config, { launchApp: false });
+before(async () => {
+  await detox.init(config);
 });
 
-beforeEach(async () => {
-  await adapter.beforeEach();
-  await device.launchApp({
-    permissions: { location: 'always', notifications: 'YES', calendar: 'YES' },
-    newInstance: true,
-  });
-  await device.setURLBlacklist([
-    '.*optimizely.*',
-    '.*smetrics.*',
-    '.*branch\\.io.*',
-    '.*xtify.*',
-    '.*apple\\.com.*',
-    '.*msdk\\.freshchat\\.com.*',
-  ]);
+beforeEach(async function () {
+  await adapter.beforeEach(this);
 });
 
-afterAll(async () => {
-  await adapter.afterAll();
+afterEach(async function () {
+  await adapter.afterEach(this);
+});
+
+after(async () => {
   await detox.cleanup();
 });

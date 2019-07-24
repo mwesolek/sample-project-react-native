@@ -1,7 +1,4 @@
 describe('Example', () => {
-  beforeAll(done => {
-    done();
-  });
 
   it('should have welcome screen', async () => {
     await expect(element(by.id('welcome'))).toBeVisible();

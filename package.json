@@ -7,13 +7,14 @@
     "test": "jest"
   },
   "dependencies": {
-    "detox": "^13.2.0",
+    "detox": "13.2.0",
     "react": "16.8.3",
     "react-native": "0.59.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
     "jest": "^24.7.1",
+    "mocha": "6.2.0",
     "babel-preset-react-native": "^5",
     "react-test-renderer": "16.4.1"
   },
@@ -42,11 +43,11 @@
             "name": "Nexus_5X_API_27"
         },
         "android.emu.release": {
-            "binaryPath": "android/apk/outputs/apk/release/app-release.apk",
+            "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
             "build":
             "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && cd ..",
             "type": "android.emulator",
-            "name": "testEmulator"
+            "name": "Pixel_2_XL_API_27"
         },
         "android.geny.debug": {
           "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
@@ -55,8 +56,6 @@
             "name": "192.168.56.101:5555"
       }
     },
-    "specs": "",
-    "test-runner": "jest",
-    "runner-config": "e2e/config.json"
+    "test-runner": "mocha"
   }
 }
