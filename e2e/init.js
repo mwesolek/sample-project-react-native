@@ -3,7 +3,7 @@ const adapter = require('detox/runners/jest/adapter');
 
 const config = require('../package.json').detox;
 
-jest.setTimeout(600000);
+jest.setTimeout(6000);
 jasmine.getEnv().addReporter(adapter);
 
 beforeAll(async () => {
